@@ -13,6 +13,8 @@ module.exports = React.createClass({
     const { body } = this.props;
     const { title } = Helmet.rewind();
     const font = <link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700&subset=latin,cyrillic" rel="stylesheet" type="text/css" />;
+    const icons = <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />;
+
     let css;
     if (process.env.NODE_ENV === 'production') {
       // eslint-disable-next-line import/no-webpack-loader-syntax
@@ -27,6 +29,7 @@ module.exports = React.createClass({
           <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=5.0" />
           { title.toComponent() }
           { font }
+          { icons }
           { css }
         </head>
         <body>
